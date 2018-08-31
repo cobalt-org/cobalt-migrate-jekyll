@@ -13,9 +13,9 @@ main() {
             ;;
     esac
 
-    cargo rustc --target $TARGET --release --bin cobalt -- -C lto
+    cargo rustc --target $TARGET --release --bin cobalt-migrate-jekyll -- -C lto
 
-    cp target/$TARGET/release/cobalt $stage/
+    cp target/$TARGET/release/cobalt-migrate-jekyll $stage/
 
     cd $stage
     tar czf $src/$CRATE_NAME-$TRAVIS_TAG-$TARGET.tar.gz *

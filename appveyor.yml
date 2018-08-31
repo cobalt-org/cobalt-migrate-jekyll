@@ -5,7 +5,7 @@ os: Visual Studio 2017
 
 environment:
   global:
-    CRATE_NAME: cobalt
+    CRATE_NAME: cobalt-migrate-jekyll
     #APPVEYOR_CACHE_SKIP_RESTORE: true
 
   matrix:
@@ -36,9 +36,9 @@ test_script:
   - if [%APPVEYOR_REPO_TAG%]==[false] ( cargo test --all )
   - if [%APPVEYOR_REPO_TAG%]==[false] ( cargo build --all --no-default-features )
   - if [%APPVEYOR_REPO_TAG%]==[false] ( cargo test --all --no-default-features )
-  
+
 before_deploy:
-  - cargo rustc --target %TARGET% --release --bin cobalt -- -C lto
+  - cargo rustc --target %TARGET% --release --bin cobalt-migrate-jekyll -- -C lto
   - ps: ci\before_deploy.ps1
 
 deploy:

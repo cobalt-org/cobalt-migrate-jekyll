@@ -2,12 +2,11 @@
 
 use std::io;
 
-use ignore;
+use cobalt;
 use liquid;
 use serde_json;
 use serde_yaml;
 use toml;
-use walkdir;
 
 error_chain! {
 
@@ -16,12 +15,11 @@ error_chain! {
 
     foreign_links {
         Io(io::Error);
+        Cobalt(cobalt::Error);
         Liquid(liquid::Error);
-        WalkDir(walkdir::Error);
         SerdeYaml(serde_yaml::Error);
         SerdeJson(serde_json::Error);
         Toml(toml::de::Error);
-        Ignore(ignore::Error);
     }
 
     errors {
