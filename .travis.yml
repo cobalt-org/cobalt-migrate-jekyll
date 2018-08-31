@@ -3,7 +3,7 @@ language: rust
 
 env:
   global:
-  - CRATE_NAME=cobalt
+  - CRATE_NAME=cobalt-migrate-jekyll
 
 matrix:
   include:

@@ -1,9 +1,9 @@
 use std::fmt;
 
+use cobalt::cobalt_model;
 use regex;
 
 use super::frontmatter;
-use cobalt_model;
 use error::*;
 
 #[derive(Debug, Eq, PartialEq, Default, Clone)]

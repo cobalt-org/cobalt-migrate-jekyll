@@ -1,12 +1,12 @@
 use std::fmt;
 
+use cobalt::cobalt_model;
 use liquid;
 use serde_yaml;
 
 use super::Part;
 use super::Permalink;
 use super::VARIABLES;
-use cobalt_model;
 use error::*;
 
 #[derive(Debug, Eq, PartialEq, Default, Clone, Serialize, Deserialize)]
